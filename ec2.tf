@@ -4,4 +4,7 @@ resource "aws_instance" "ec2vm" {
     key_name = "ubuntu-devops"
     user_data = file("${path.module}/userdata.sh")
     security_groups = [ "DevOps-SG" ]  
+    tags = {
+      "Name" = "docker"
+    }
 }
